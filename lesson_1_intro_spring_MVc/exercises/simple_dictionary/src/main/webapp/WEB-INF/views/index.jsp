@@ -5,6 +5,7 @@
   Time: 3:07 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -66,19 +67,27 @@
     </style>
 </head>
 <body>
+<div class="row">
+    <div class="col-6">
+        <h1 class="text-primary">Simple Dictionary</h1><br>
+        <form action="/translate">
+            <h3><label for="word">Enter word: <input type="text" name="word" id="word" value="${word}"></label>
+                <input type="submit" value="Translate">
+            </h3>
+        </form>
+    </div>
+    <div class="col-6">
+        <h1 class="text-info">
+            <c:if test="${not empty vietnameseMean}">
+                <h1 class="text-info">Vietnamese Mean: ${vietnameseMean}</h1>
+            </c:if>
+            <c:if test="${empty vietnameseMean}">
+                <h1 class="text-info">Word not found</h1>
+            </c:if>
+        </h1>
+    </div>
+</div>
 
-<form method="post" action="/current">
-    <table>
-        <tr>
-            <td>USD</td>
-            <td><input type="number" name="usd"></td>
-        </tr>
-        <tr>
-            ${result}
-        <tr>
-            <td><input type="submit" value="Ok"></td>
-        </tr>
-    </table>
-</form>
+
 </body>
 </html>

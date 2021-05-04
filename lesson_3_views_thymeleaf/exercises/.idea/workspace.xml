@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6488359-d71e-46e9-b66a-705125fe565e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/.idea/modules/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lesson_5_database_orm/practises/.idea/practises.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lesson_2_spring_controller/exercises/sandwich/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lesson_2_spring_controller/exercises/sandwich/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lesson_2_spring_controller/exercises/sandwich/src/main/java/controller/CondimentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lesson_2_spring_controller/exercises/sandwich/src/main/java/controller/CondimentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises/src/main/java/com/codegym/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practises/src/main/java/com/codegym/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lesson_4_data_binding_form/practises/_02_login/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lesson_4_data_binding_form/practises/_02_login/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/inittial/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/inittial/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/inittial/AppInnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/inittial/AppInnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/model/Customer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1s4wPeUmqnOrLrfMkEoFa58eCN6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/codegym/configuration" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\C1220G2-Le-Duc-Sang-Module-4\lesson_3_views_thymeleaf\exercises\src\main\java\com\codegym\configuration" />
+      <recent name="D:\C1220G2-Le-Duc-Sang-Module-4\lesson_3_views_thymeleaf\exercises\src\main\webapp" />
+      <recent name="D:\C1220G2-Le-Duc-Sang-Module-4\lesson_3_views_thymeleaf\exercises\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.453">
+    <configuration name="ProductService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.codegym.service.ProductService" />
+      <module name="exercises.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codegym.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.453" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.453" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : org.example : exercises-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_exercises" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61833" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.example : exercises-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 9.0.453" />
+      <item itemvalue="Application.ProductService" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProductService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6488359-d71e-46e9-b66a-705125fe565e" name="Default Changelist" comment="" />
+      <created>1620145146047</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620145146047</updated>
+      <workItem from="1620145148354" duration="3098000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1959" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620146987831">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1959" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620146987831" />
+    <state x="2205" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1620147255545">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2205" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620147255545" />
+    <state x="2235" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620148269030">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2235" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148269030" />
+    <state width="1126" height="280" key="GridCell.Tab.0.bottom" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1126" height="280" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="1126" height="280" key="GridCell.Tab.0.center" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1126" height="280" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="1126" height="280" key="GridCell.Tab.0.left" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1126" height="280" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="1126" height="280" key="GridCell.Tab.0.right" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1126" height="280" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.1.bottom" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.1.center" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.1.left" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.1.right" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.2.bottom" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.2.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.2.center" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.2.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.2.left" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.2.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state width="767" height="317" key="GridCell.Tab.2.right" timestamp="1620148273099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="767" height="317" key="GridCell.Tab.2.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620148273099" />
+    <state x="1985" y="102" key="SettingsEditor" timestamp="1620146972863">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1985" y="102" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620146972863" />
+  </component>
+</project>

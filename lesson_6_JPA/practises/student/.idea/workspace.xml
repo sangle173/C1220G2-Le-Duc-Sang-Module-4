@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7690827b-91cd-465f-af22-9aa7018a2ea5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_2_spring_controller/exercises/sandwich/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_2_spring_controller/exercises/sandwich/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_2_spring_controller/exercises/sandwich/src/main/java/controller/CondimentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_2_spring_controller/exercises/sandwich/src/main/java/controller/CondimentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/build/libs/exercises-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/build/libs/exercises-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/exercises/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/practises/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_3_views_thymeleaf/practises/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_4_data_binding_form/practises/_02_login/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_4_data_binding_form/practises/_02_login/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_ORM/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lesson_5_ORM/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/demo/.idea/modules/demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/inittial/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/inittial/AppInnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/demo/src/main/java/com/codegym/orm/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/practises/.idea/practises.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/practises/_01_practises/src/main/webapp/WEB-INF/templates/customers/info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson_5_database_orm/practises/_01_practises/src/main/webapp/WEB-INF/templates/customers/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer/src/main/java/com/codegym/cms/configuration/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer/src/main/java/com/codegym/cms/configuration/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/repository/IGeneralRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/repository/IGeneralRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/service/IGeneralService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/java/com/codegym/cms/service/IGeneralService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/webapp/WEB-INF/views/customer/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/webapp/WEB-INF/views/customer/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/webapp/WEB-INF/views/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/webapp/WEB-INF/views/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer_management/src/main/webapp/WEB-INF/views/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../customer_management/src/main/webapp/WEB-INF/views/customer/list.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1s7kNlFpm6Eibr9J2F5UwThVq3j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7690827b-91cd-465f-af22-9aa7018a2ea5" name="Default Changelist" comment="" />
+      <created>1620230977898</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620230977898</updated>
+      <workItem from="1620230981423" duration="710000" />
+      <workItem from="1620264817715" duration="889000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2360" y="94" key="#Project_Structure" timestamp="1620231023388">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2360" y="94" key="#Project_Structure/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620231023388" />
+    <state x="2659" y="260" key="FileChooserDialogImpl" timestamp="1620265783632">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2659" y="260" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620265783632" />
+    <state x="2262" y="83" key="new project wizard" timestamp="1620265812875">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2262" y="83" key="new project wizard/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620265812875" />
+  </component>
+</project>

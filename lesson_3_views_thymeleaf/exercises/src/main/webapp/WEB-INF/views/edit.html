@@ -3,14 +3,14 @@
 <head th:replace="/layout :: head">
 <body>
 
-<h3>Edit Customer</h3>
+<h3>Edit Product</h3>
 <p>
-    <a th:href="@{/customer}">
-        Back to customer list
+    <a th:href="@{/product}">
+        Back to product list
     </a>
 </p>
 <div id="form">
-    <form action="#" th:action="@{/customer/update}" th:object="${customer}"
+    <form action="#" th:action="@{/product/update}" th:object="${product}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
@@ -18,12 +18,16 @@
             <input type="text" th:field="*{name}"/>
         </div>
         <div>
-            <label>Email</label>
-            <input type="email" th:field="*{email}"/>
+            <label>Price</label>
+            <input type="email" th:field="*{price}"/>
         </div>
         <div>
-            <label>Address</label>
-            <input type="text" th:field="*{address}"/>
+            <label>Description</label>
+            <input type="text" th:field="*{description}"/>
+        </div>
+        <div>
+            <label>Publish</label>
+            <input type="text" th:field="*{publish}"/>
         </div>
         <input type="submit" value="Edit"/>
     </form>

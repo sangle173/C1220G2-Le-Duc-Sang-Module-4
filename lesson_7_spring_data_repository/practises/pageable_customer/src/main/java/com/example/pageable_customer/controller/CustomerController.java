@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Optional;
 
 @Controller
 public class CustomerController {
@@ -17,8 +20,13 @@ public class CustomerController {
     private CustomerServiceImpl service;
 
     @GetMapping("/")
-    public ModelAndView listCustomers(Pageable pageable) {
-        Page<Customer> customers = service.findAll(pageable);
+    public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, Pageable pageable) {
+        Page<Customer> customers;
+        if (search.isPresent()){
+            customers=service.findAllByFirstNameContaining(search.get(),pageable);
+        }else {
+            customers=service.findAll(pageable);
+        }
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("customers", customers);
         return modelAndView;

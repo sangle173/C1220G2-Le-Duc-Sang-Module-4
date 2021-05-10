@@ -21,4 +21,9 @@ public class CustomerServiceImpl implements ICustomerService{
     public void save(Customer customer) {
         repository.save(customer);
     }
+
+    @Override
+    public Page<Customer> findAllByFirstNameContaining(String name, Pageable pageable) {
+        return repository.findAllByNameContaining(name, pageable);
+    }
 }

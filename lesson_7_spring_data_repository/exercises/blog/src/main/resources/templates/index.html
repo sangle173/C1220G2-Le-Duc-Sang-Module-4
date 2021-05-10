@@ -5,28 +5,44 @@
 </head>
 <body>
 <a href="/create-blog">Create new Blog</a>
-<h1>Blogs</h1>
-<table border="1">
+<h1 class="text-center my-3">Blog List</h1>
+
+<table>
+    <thead>
     <tr>
-        <th>#</th>
-        <th>Topic</th>
-        <th>Content</th>
-        <th colspan="3" style="text-align: center">Action</th>
+        <th class="align-middle">ID</th>
+        <th class="align-middle">Title
+            <span th:if="${order=='desc'}">
+                    <a th:if="${key}" th:href="@{/(key=${key}, order='asc')}"><i class="fas fa-sort-alpha-down"></i></a>
+                    <a th:unless="${key}" th:href="@{/(order='asc')}"><i class="fas fa-sort-alpha-down"></i></a>
+                </span>
+            <span th:unless="${order=='desc'}">
+                    <a th:if="${key}" th:href="@{/(key=${key}, order='desc')}"><i class="fas fa-sort-alpha-down-alt"></i></a>
+                    <a th:unless="${key}" th:href="@{/(order='desc')}"><i class="fas fa-sort-alpha-down-alt"></i></a>
+                </span>
+        </th>
+        <th class="align-middle">Date</th>
+        <th class="align-middle">Category</th>
+        <th class="align-middle">
+            <a class="btn btn-success" th:href="@{/blog/create}"><i class="far fa-plus-square"></i></a>
+        </th>
     </tr>
-    <th:block th:each="blog : ${blogs}">
-        <tr>
-            <td th:text="${blog.id}"></td>
-            <td th:text="${blog.topic}"></td>
-            <td th:text="${blog.content}"></td>
-            <td><a th:href="@{/edit-blog/__${blog.id}__ }">Edit</a></td>
-            <td><a th:href="@{/delete-blog/__${blog.id}__ }">Delete</a></td>
-        </tr>
-    </th:block>
+    </thead>
+    <tbody>
+    <tr th:each="blog,iterStat : ${blogs}">
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.topic}"></td>
+        <td class="align-middle" th:text="${blog.content}"></td>
+        <td>
+            <a class="btn btn-info" th:href="@{/blog/view(id=${blog.id})}"><i class="far fa-eye"></i></a><br>
+            <a class="btn btn-warning" th:href="@{/blog/edit(id=${blog.id})}"><i class="far fa-edit"></i></a><br>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"
+                    th:onclick="|parseId('${blog.id}')|">
+                <i class="fas fa-ban"></i>
+            </button>
+        </td>
+    </tr>
+    </tbody>
 </table>
-<!--<div>-->
-<!--    <a th:href="@{'/customers'(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}">Previous</a>-->
-<!--    <span th:text="${customers.number + 1}"></span>/<span th:text="${customers.totalPages}"></span>-->
-<!--    <a th:href="@{'/customers'(page=${customers.number + 1})}" th:if="${customers.hasNext()}">Next</a>-->
-<!--</div>-->
 </body>
 </html>

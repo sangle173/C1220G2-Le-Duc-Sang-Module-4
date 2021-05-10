@@ -5,13 +5,20 @@ import com.example.blog.model.Category;
 import com.example.blog.service.BlogService;
 import com.example.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class BlogController {
@@ -23,11 +30,25 @@ public class BlogController {
     private CategoryService categoryService;
 
     @GetMapping("/")
-    public ModelAndView listCustomer() {
-        List<Blog> blogs = blogService.findAll();
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("blogs", blogs);
-        return modelAndView;
+    public String listBlogs(@RequestParam Optional<String> key, @RequestParam Optional<String> order,
+                            @PageableDefault(value = 2) Pageable pageable, Model model ){
+        Page<Blog> blogs;
+        if (order.isPresent()){
+            if (order.get().equals("asc")) {
+                pageable = PageRequest.of(pageable.getPageNumber(), 2, Sort.by("title").ascending());
+            } else {
+                pageable = PageRequest.of(pageable.getPageNumber(), 2, Sort.by("title").descending());
+            }
+            model.addAttribute("order", order.get());
+        }
+        if (key.isPresent() && !key.get().trim().equals("")) {
+            model.addAttribute("key", key.get());
+            blogs = blogService.searchInTitle(key.get(), pageable);
+        } else {
+            blogs = blogService.findAll(pageable);
+        }
+        model.addAttribute("blogs", blogs);
+        return "index";
     }
 
     @GetMapping("/create-blog")
@@ -45,9 +66,9 @@ public class BlogController {
         return modelAndView;
     }
 
-    @ModelAttribute("categories")
-    public List<Category> categories() {
-        return categoryService.findAll();
-    }
+//    @ModelAttribute("categories")
+//    public List<Category> categories() {
+//        return categoryService.findAll();
+//    }
 
 }

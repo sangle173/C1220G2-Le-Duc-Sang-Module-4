@@ -1,1 +1,0 @@
-# C1220G2-Le-Duc-Sang-Module-4

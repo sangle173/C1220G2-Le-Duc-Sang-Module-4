@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List categories homepage</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+</head>
+<body>
+<div class="container-fluid">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand h3" href="/">Sang Le</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link h3" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h3" th:href="@{/categories}">List category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h3" th:href="@{categories/new}">Create category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h3" th:href="@{/products}">List category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h3" th:href="@{pruducts/new}">Create category</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <h1 class="h1 text-center">List categories</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="category: ${categories}">
+                <td scope="row" th:text="${category.id}"></td>
+                <td scope="row" th:text="${category.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

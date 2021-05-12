@@ -1,4 +1,11 @@
 package com.example.user_validate.service;
 
-public interface IUserService {
+import java.util.List;
+
+public interface IUserService<E> {
+    List<E> findAll();
+
+    E findById(Integer id);
+
+    void save(E e);
 }

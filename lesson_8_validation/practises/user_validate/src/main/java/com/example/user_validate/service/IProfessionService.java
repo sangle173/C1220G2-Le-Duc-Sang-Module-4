@@ -1,4 +1,7 @@
 package com.example.user_validate.service;
 
-public interface IProfessionService {
+import java.util.List;
+
+public interface IProfessionService<E> {
+    List<E> findAll();
 }

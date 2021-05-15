@@ -34,6 +34,20 @@
                 </td>
             </tr>
             <tr>
+                <td>Product Img:</td>
+                <td>
+                    <input type="text" th:field="*{url}">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Category:</td>
+                <td>
+                    <select th:field="*{category}">
+                        <option th:each="c: ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2">
                     <button type="submit">Save</button>
                 </td>

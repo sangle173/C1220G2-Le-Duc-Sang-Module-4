@@ -1,10 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Blog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"></script>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Mr Sang</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Codegym</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">C12</a>
+                            <a class="dropdown-item" href="#">Blog</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h3 class="text-info">Blog List</h3>
+        <p>
+            <a class="btn btn-info" href="/create">Create new Blog</a>
+        </p>
+        <table class="table table-striped" style="width:100%">
+            <thead>
+            <tr>
+            <tr>
+                <td>Product Id</td>
+                <td>Product Name</td>
+                <td>Product Description</td>
+                <td>Product Image</td>
+                <td>Product Price</td>
+                <td>Product sale</td>
+                <td>Product status</td>
+                <td>product view</td>
+            </tr>
+            <td colspan="3" scope="col" class="text-center">Action</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product: ${products}">
+                <td th:text="${product.productId}" scope="col"></td>
+                <td th:text="${product.productName}" scope="col"></td>
+                <td th:text="${product.productDescription}" scope="col"></td>
+                <img th:src="${product.productImage}" alt="hello">
+                <td th:text="${product.productPrice}" scope="col"></td>
+                <td th:text="${product.productSale}" scope="col"></td>
+                <td th:text="${product.productStatus}" scope="col"></td>
+                <td th:text="${product.productView}" scope="col"></td>
+                <td>
+                    <a th:href="@{/delete/__${product.productId}__}" scope="col">Delete</a>
+                </td>
+                <td>
+                    <a th:href="@{/view/__${product.productId}__}" scope="col">View</a>
+                </td>
+                <td>
+                    <a th:href="@{/edit/__${product.productId}__}" scope="col">Edit</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+    </html>

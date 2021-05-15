@@ -1,7 +1,9 @@
 package com.example.product_management_exercises.controller;
 
+import com.example.product_management_exercises.model.Category;
 import com.example.product_management_exercises.model.Product;
-import com.example.product_management_exercises.service.ProductService;
+import com.example.product_management_exercises.service.imple.CategoryService;
+import com.example.product_management_exercises.service.imple.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -17,10 +19,31 @@ public class AppController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private CategoryService categoryService;
+
     @RequestMapping("/")
     public String viewHomePage(Model model) {
-        String keyword=null;
+        String keyword = null;
         return viewPage(model, 1, "name", "asc", keyword);
+    }
+
+    @GetMapping("/category/new")
+    public String showCreateCategoryForm(Model model) {
+        model.addAttribute("category", new Category());
+        return "category_form";
+    }
+
+    @RequestMapping(value = "/category/save", method = RequestMethod.POST)
+    public String saveCategory(@ModelAttribute("category") Category category) {
+        categoryService.save(category);
+        return "redirect:/categories";
+    }
+
+    @GetMapping("/categories")
+    public String showCategories(Model model) {
+        model.addAttribute("categories", categoryService.findAll());
+        return "categories";
     }
 
     @RequestMapping("/page/{pageNum}")
@@ -30,7 +53,7 @@ public class AppController {
                            @Param("sortDir") String sortDir,
                            @Param("keyword") String keyword) {
 
-        Page<Product> page = productService.findAll(currentPage, sortField, sortDir,keyword);
+        Page<Product> page = productService.findAll(currentPage, sortField, sortDir, keyword);
 
         List<Product> productList = page.getContent();
 
@@ -41,7 +64,8 @@ public class AppController {
         model.addAttribute("sortField", sortField);
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
-        model.addAttribute("keyword",keyword);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("categories", categoryService.findAll());
 
         return "index";
     }
@@ -50,7 +74,7 @@ public class AppController {
     public String showNewProductForm(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
-
+        model.addAttribute("categories", categoryService.findAll());
         return "new_product";
     }
 
@@ -72,5 +96,13 @@ public class AppController {
     public String showDeleteProductForm(@PathVariable(name = "id") Long id) {
         productService.deleteById(id);
         return "redirect:/";
+    }
+
+    @RequestMapping("/view/{id}")
+    public String showProduct(@PathVariable(name = "id") Long id,Model model) {
+
+        Product product=productService.findById(id);
+        model.addAttribute("product",product);
+        return "view";
     }
 }

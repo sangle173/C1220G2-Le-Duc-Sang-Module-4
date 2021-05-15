@@ -4,7 +4,9 @@ import com.example.pageable_customer.model.Customer;
 import com.example.pageable_customer.service.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,7 +22,7 @@ public class CustomerController {
     private CustomerServiceImpl service;
 
     @GetMapping("/")
-    public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, Pageable pageable) {
+    public ModelAndView listCustomers(@RequestParam("search") Optional<String> search,@RequestParam("order") Optional<String> order ,Pageable pageable) {
         Page<Customer> customers;
         if (search.isPresent()){
             customers=service.findAllByFirstNameContaining(search.get(),pageable);

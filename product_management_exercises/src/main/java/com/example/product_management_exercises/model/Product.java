@@ -14,7 +14,11 @@ public class Product {
     private String brand;
     private String madeIn;
     private float price;
+    private String url;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
     public Product() {
     }
 
@@ -74,5 +78,30 @@ public class Product {
                 ", madeIn='" + madeIn + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Product(String name, String brand, String madeIn, float price, String url, Category category) {
+        this.name = name;
+        this.brand = brand;
+        this.madeIn = madeIn;
+        this.price = price;
+        this.url = url;
+        this.category = category;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

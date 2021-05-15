@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List categories homepage</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+</head>
+<body>
+
+<button class="btn-delete" data-id=${row.id} data-firstname="${row.firstname}" data-lastname="${row.lastname}">DEL</button>
+
+<div class id="editModalTemplate">
+    <div class="modal-body">
+        <div class="modal-body">
+            You are about to delete: <div data-value="firstname"/> <div data-value="lastname"/>
+
+            <form action="#" th:action="@{/delete/_id_}" method="delete">
+                <input type="text" hidden="true" name="id">
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" th:href="@{/delete/{id}(id='_id_')}" th:method="delete">Remove</button>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script>
+    $('.btn-delete').click(function(){
+        //clone dialog and remove ids to ensure uniqueness
+        var $modal = $('#editModalTemplate').clone().removeAttr('id');
+
+        //apply custom values where needed
+        var $btn = $(this);
+        var rowId = $btn.attr('data-id');
+        var firstname = $btn.attr('data-firstname');
+        var lastname = $btn.attr('data-lastname');
+
+        $modal.find('[data-value="firstname"]').text(firstname );
+        $modal.find('[data-value="lastname"]').text(lastname );
+        $modal.find('[name="id"]').val($btn.attr('data-id'));
+        $modal.find('form').attr('action').replace('_id_', rowId);
+        $modal.find('button[type="submit"]').attr('href', $modal.find('button[type="submit"]').attr('href').replace('_id_', rowId);
+
+        //show dialog
+        $modal.modal();
+    });
+</script>
+</body>
+</html>

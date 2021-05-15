@@ -15,6 +15,8 @@
         <h1>Product Manager</h1>
         <a href="/new">Create new product</a>
         <br>
+        <a href="/categories">Show categories</a>
+        <br>
         <br>
     </div>
     <div>
@@ -33,6 +35,7 @@
             <table border="1" cellpadding="10">
                 <thead>
                 <tr>
+                    <th>#</th>
                     <th>
                         <a th:href="@{'/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir}}">Product
                             ID</a>
@@ -50,21 +53,29 @@
                     <th>
                         <a th:href="@{'/page/' + ${currentPage} + '?sortField=price&sortDir=' + ${reverseSortDir}}">Price</a>
                     </th>
-                    <th colspan="2" align="center">Action</th>
+                    <th>Image</th>
+                    <th colspan="3" align="center">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="product: ${productList}">
+                <tr th:each="product,status: ${productList}">
+                    <td th:text="${status.index+1}"></td>
                     <td th:text="${product.id}"></td>
                     <td th:text="${product.name}"></td>
                     <td th:text="${product.brand}"></td>
                     <td th:text="${product.madeIn}"></td>
                     <td th:text="${product.price}"></td>
                     <td>
+                        <img th:src="${product.url}" alt="img" height="100px" width="100px">
+                    </td>
+                    <td>
                         <a th:href="@{'/edit/'+${product.id}}">Edit</a>
                     </td>
                     <td>
-                        <a th:href="@{'/edit/'+${product.id}}">Delete</a>
+                        <a th:href="@{'/delete/'+${product.id}}">Delete</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/view/'+${product.id}}">View</a>
                     </td>
                 </tr>
                 </tbody>

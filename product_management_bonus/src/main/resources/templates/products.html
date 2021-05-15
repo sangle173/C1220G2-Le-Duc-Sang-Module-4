@@ -30,7 +30,7 @@
                         <a class="nav-link h3" th:href="@{/products}">List category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link h3" th:href="@{pruducts/new}">Create category</a>
+                        <a class="nav-link h3" th:href="@{products/new}">Create category</a>
                     </li>
                 </ul>
             </div>
@@ -43,12 +43,23 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">name</th>
+                <th scope="col">price</th>
+                <th scope="col">category</th>
+                <th scope="col" class="text-center" colspan="2">action</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="category: ${categories}">
-                <td scope="row" th:text="${category.id}"></td>
-                <td scope="row" th:text="${category.name}"></td>
+            <tr th:each="product: ${products}">
+                <td scope="row" th:text="${product.id}"></td>
+                <td scope="row" th:text="${product.name}"></td>
+                <td scope="row" th:text="${product.price}"></td>
+                <td scope="row" th:text="${product.category.getName()}"></td>
+                <td scope="row">
+                    <a  class="btn btn-warning text-muted" th:href="@{'/products/edit/'+ ${product.id}}">edit</a>
+                </td>
+                <td scope="row">
+                    <a  class="btn btn-danger text-muted" th:href="@{'/products/delete/'+ ${product.id}}">delete</a>
+                </td>
             </tr>
             </tbody>
         </table>

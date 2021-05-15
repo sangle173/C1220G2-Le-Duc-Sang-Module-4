@@ -8,4 +8,5 @@ public interface ICustomerService {
     Page<Customer> findAll(Pageable pageable);
     void save(Customer customer);
     Page<Customer> findAllByFirstNameContaining(String name, Pageable pageable);
+    Page<Customer> findByOrderByNameDesc(Pageable pageable);
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <style type="text/css">
+        a {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>Product Detail</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Madein</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th colspan="2">
+                action
+            </th>
+        </tr>
+        <tr>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.brand}"></td>
+            <td th:text="${product.madeIn}"></td>
+            <td th:text="${product.price}"></td>
+            <td>
+                <img th:src="${product.url}" alt="img" height="100px" width="100px">
+            </td>
+            <td>
+                <a th:href="@{'/edit/'+${product.id}}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{'/delete/'+${product.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        </thead>
+    </table>
+</div>
+</body>
+</html>

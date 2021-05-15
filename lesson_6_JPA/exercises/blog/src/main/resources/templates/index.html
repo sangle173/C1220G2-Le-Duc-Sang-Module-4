@@ -47,7 +47,10 @@
             </ul>
         </div>
     </nav>
-    <h3 class="text-info">Student List</h3>
+    <h3 class="text-info">Blog List</h3>
+    <p>
+        <a class="btn btn-info" href="/create">Create new Blog</a>
+    </p>
     <table class="table table-striped" style="width:100%">
         <thead>
         <tr>
@@ -69,35 +72,11 @@
                 <a th:href="@{/view/__${blog.id}__}" scope="col">View</a>
             </td>
             <td>
-                <a th:href="@{/edit/__${blog.id}__}"  scope="col">Edit</a>
+                <a th:href="@{/edit/__${blog.id}__}" scope="col">Edit</a>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
-
-<script>
-    $(document).ready(function () {
-        $('#example').dataTable({
-            "language": {
-                "sProcessing": "Đang xử lý...",
-                "sLengthMenu": "Xem _MENU_ mục",
-                "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
-                "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
-                "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
-                "sInfoFiltered": "(được lọc từ _MAX_ mục)",
-                "sInfoPostFix": "",
-                "sSearch": "Tìm:",
-                "sUrl": "",
-                "oPaginate": {
-                    "sFirst": "Đầu",
-                    "sPrevious": "Trước",
-                    "sNext": "Tiếp",
-                    "sLast": "Cuối"
-                }
-            }
-        });
-    });
-</script>
 </body>
 </html>

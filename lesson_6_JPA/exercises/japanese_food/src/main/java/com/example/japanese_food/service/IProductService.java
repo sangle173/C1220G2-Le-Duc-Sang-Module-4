@@ -1,4 +1,8 @@
 package com.example.japanese_food.service;
 
-public class IProductService {
+
+import java.util.List;
+
+public interface IProductService<E> {
+    List<E> findAll();
 }

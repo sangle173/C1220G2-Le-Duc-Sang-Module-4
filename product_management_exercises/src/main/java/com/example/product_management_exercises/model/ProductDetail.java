@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "product_details")
 public class ProductDetail {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -21,6 +20,9 @@ public class ProductDetail {
     }
 
     public ProductDetail(String name, String value, Product product) {
+        this.name = name;
+        this.value = value;
+        this.product = product;
     }
 
     public Integer getId() {

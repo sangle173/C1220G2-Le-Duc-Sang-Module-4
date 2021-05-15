@@ -1,5 +1,6 @@
 package com.example.product_management_exercises.controller;
 
+import com.example.product_management_exercises.model.Cart;
 import com.example.product_management_exercises.model.Category;
 import com.example.product_management_exercises.model.Product;
 import com.example.product_management_exercises.service.imple.CategoryService;
@@ -16,12 +17,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
+@SessionAttributes("cart")
 public class AppController {
     @Autowired
     private ProductService productService;
 
     @Autowired
     private CategoryService categoryService;
+
+    @ModelAttribute("cart")
+    public Cart setupCart() {
+        return new Cart();
+    }
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
@@ -81,10 +88,10 @@ public class AppController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute("product") Product product, HttpServletRequest request) {
-        String[] detailName=request.getParameterValues("detailName");
-        String[] detailValue=request.getParameterValues("detailValue");
-        for (int i = 0; i <detailName.length ; i++) {
-            product.addDetails(detailName[i],detailValue[i]);
+        String[] detailName = request.getParameterValues("detailName");
+        String[] detailValue = request.getParameterValues("detailValue");
+        for (int i = 0; i < detailName.length; i++) {
+            product.addDetails(detailName[i], detailValue[i]);
         }
         productService.save(product);
         return "redirect:/";
@@ -105,10 +112,10 @@ public class AppController {
     }
 
     @RequestMapping("/view/{id}")
-    public String showProduct(@PathVariable(name = "id") Long id,Model model) {
+    public String showProduct(@PathVariable(name = "id") Long id, Model model) {
 
-        Product product=productService.findById(id);
-        model.addAttribute("product",product);
+        Product product = productService.findById(id);
+        model.addAttribute("product", product);
         return "view";
     }
 }

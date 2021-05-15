@@ -22,12 +22,11 @@ public class ProductService implements IProductService<Product> {
         sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
         int pageSize = 5;
         Pageable pageable = PageRequest.of(pageNum - 1, pageSize, sort);
-        if (keyword!=null){
-            return productRepository.findByNameContaining(keyword,pageable);
+        if (keyword != null) {
+            return productRepository.findByNameContaining(keyword, pageable);
         }
         return productRepository.findAll(pageable);
     }
-
 
 
     @Override

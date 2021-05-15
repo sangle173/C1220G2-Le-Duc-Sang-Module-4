@@ -22,7 +22,7 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, targetEntity = ProductDetail.class)
     private List<ProductDetail> details = new ArrayList<>();
 
     public Product() {
@@ -36,13 +36,6 @@ public class Product {
         this.url = url;
         this.category = category;
         this.details = details;
-    }
-
-    public Product(String name, String brand, String madeIn, float price) {
-        this.name = name;
-        this.brand = brand;
-        this.madeIn = madeIn;
-        this.price = price;
     }
 
     public Long getId() {
@@ -85,16 +78,6 @@ public class Product {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", brand='" + brand + '\'' +
-                ", madeIn='" + madeIn + '\'' +
-                ", price=" + price +
-                '}';
-    }
 
     public Category getCategory() {
         return category;
@@ -104,14 +87,6 @@ public class Product {
         this.category = category;
     }
 
-    public Product(String name, String brand, String madeIn, float price, String url, Category category) {
-        this.name = name;
-        this.brand = brand;
-        this.madeIn = madeIn;
-        this.price = price;
-        this.url = url;
-        this.category = category;
-    }
 
     public String getUrl() {
         return url;

@@ -2,6 +2,8 @@ package com.example.product_management_exercises.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -19,7 +21,21 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductDetail> details = new ArrayList<>();
+
     public Product() {
+    }
+
+    public Product(String name, String brand, String madeIn, float price, String url, Category category, List<ProductDetail> details) {
+        this.name = name;
+        this.brand = brand;
+        this.madeIn = madeIn;
+        this.price = price;
+        this.url = url;
+        this.category = category;
+        this.details = details;
     }
 
     public Product(String name, String brand, String madeIn, float price) {
@@ -103,5 +119,17 @@ public class Product {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public List<ProductDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<ProductDetail> details) {
+        this.details = details;
+    }
+
+    public void addDetails(String name, String value){
+        this.details.add(new ProductDetail(name,value,this));
     }
 }

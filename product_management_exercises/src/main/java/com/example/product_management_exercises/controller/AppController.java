@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -79,7 +80,12 @@ public class AppController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("product") Product product) {
+    public String saveProduct(@ModelAttribute("product") Product product, HttpServletRequest request) {
+        String[] detailName=request.getParameterValues("detailName");
+        String[] detailValue=request.getParameterValues("detailValue");
+        for (int i = 0; i <detailName.length ; i++) {
+            product.addDetails(detailName[i],detailValue[i]);
+        }
         productService.save(product);
         return "redirect:/";
     }

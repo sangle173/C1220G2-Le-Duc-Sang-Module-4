@@ -21,6 +21,7 @@
             <th>Madein</th>
             <th>Price</th>
             <th>Image</th>
+            <th colspan="3">Detail</th>
             <th colspan="2">
                 action
             </th>
@@ -33,6 +34,10 @@
             <td th:text="${product.price}"></td>
             <td>
                 <img th:src="${product.url}" alt="img" height="100px" width="100px">
+            </td>
+            <td th:each="detail: ${product.details}">
+                <span th:text="${detail.name}+': '"></span>
+                <span th:text="${detail.value}"></span>
             </td>
             <td>
                 <a th:href="@{'/edit/'+${product.id}}">Edit</a>

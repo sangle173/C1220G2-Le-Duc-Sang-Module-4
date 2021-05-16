@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>title</th>
+        <th>author</th>
+        <th>noOfPage</th>
+        <th>category</th>
+        <th>borrowing</th>
+        <th>quantity</th>
+    </tr>
+    <tr>
+    <td th:text="${book.id}"></td>
+    <td th:text="${book.title}"></td>
+    <td th:text="${book.author}"></td>
+    <td th:text="${book.noOfPage}"></td>
+    <td th:text="${book.category.name}"></td>
+    <td th:text="${book.quantity}"></td>
+    <td>
+        <a th:href="@{'/member/new/'+${book.id}}">Borrow</a>
+    </td>
+    </tr>
+</table>
+</body>
+</html>

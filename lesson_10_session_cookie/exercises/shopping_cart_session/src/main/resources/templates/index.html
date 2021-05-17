@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:insert="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-danger float-left my-3">Product List</h1>
+    <a th:href="@{/cart}" class="btn btn-success float-right my-3"><i class="fas fa-shopping-cart"></i></a>
+    <table class="table table-striped">
+        <thead>
+        <tr class="row">
+            <th class="col text-center">Product</th>
+            <th class="col text-center">ID</th>
+            <th class="col text-center">Price</th>
+            <th class="col text-center">Detail</th>
+        </tr>
+        </thead>
+        <tr class="row" th:each="product : ${products}">
+            <td class="col text-center" th:text="${product.name}"></td>
+            <td class="col text-center" th:text="${product.id}"></td>
+            <td class="col text-center" th:text="${product.price}"></td>
+            <td class="col text-center"><a th:href="@{/detail(id=${product.id})}" class="btn btn-info"><i
+                    class="far fa-eye"></i></a></td>
+        </tr>
+    </table>
+</div>
+
+<div th:insert="/layout :: script"></div>
+</body>
+</html>

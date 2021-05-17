@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit blog</title>
+</head>
+<body>
+<h1>Edit blog</h1>
+<p>
+    <a href="/">blog list</a>
+</p>
+<table border="1px">
+    <tr>
+        <th>#</th>
+        <th>Topic</th>
+        <th>Content</th>
+    </tr>
+    <tr>
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.topic}"></td>
+        <td th:text="${blog.content}"></td>
+    </tr>
+</table>
+</body>
+</html>

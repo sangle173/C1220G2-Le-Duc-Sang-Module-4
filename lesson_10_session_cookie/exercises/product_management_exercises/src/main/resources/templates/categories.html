@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <style type="text/css">
+        a {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <div>
+        <h1>Category Manager</h1>
+        <a href="/category/new">Create new Category</a>
+        <br>
+        <br>
+    </div>
+    <div>
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Img</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cate: ${categories}">
+                <td th:text="${cate.id}"></td>
+                <td th:text="${cate.name}"></td>
+                <td>
+                    <img th:src="${cate.url}" height="150px" width="150px" alt="img">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

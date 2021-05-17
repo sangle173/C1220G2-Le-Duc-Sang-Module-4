@@ -1,0 +1,53 @@
+package com.example.customer_management_web_service.controller;
+
+import com.example.customer_management_web_service.model.Customer;
+import com.example.customer_management_web_service.service.ICustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/customers")
+public class CustomerController {
+    @Autowired
+    private ICustomerService customerService;
+
+    @GetMapping
+    public ResponseEntity<List<Customer>> findAllCustomer() {
+        List<Customer> customers = customerService.findAll();
+        if (customers.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(customers, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Customer> saveCustomer(@RequestBody Customer customer) {
+        return new ResponseEntity<>(customerService.save(customer), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
+        Optional<Customer> customerOptional = Optional.ofNullable(customerService.findById(id));
+        if (!customerOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        customer.setId(customerOptional.get().getId());
+        return new ResponseEntity<>(customerService.save(customer), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Customer> deleteCustomer(@PathVariable Long id) {
+        Customer customer = customerService.findById(id);
+        if (customer == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        customerService.remove(id);
+        return new ResponseEntity<>(customer, HttpStatus.NO_CONTENT);
+    }
+}

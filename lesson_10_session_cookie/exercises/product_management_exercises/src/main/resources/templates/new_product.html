@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Create</title>
+</head>
+<body>
+<div align="center">
+    <h1>Create New Product</h1>
+    <form action="#" th:action="@{/save}" method="post" th:object="${product}">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Product Name:</td>
+                <td>
+                    <input type="text" th:field="*{name}">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Brand:</td>
+                <td>
+                    <input type="text" th:field="*{brand}">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Made in:</td>
+                <td>
+                    <input type="text" th:field="*{madeIn}">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Price:</td>
+                <td>
+                    <input type="number" th:field="*{price}">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Img:</td>
+                <td>
+                    <input type="text" th:field="*{url}">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Category:</td>
+                <td>
+                    <select th:field="*{category}">
+                        <option th:each="c: ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Detail 1:
+                    <input type="text" name="detailName" placeholder="Name">
+                    <input type="text" name="detailValue" placeholder="Value">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Detail 2:
+                    <input type="text" name="detailName" placeholder="Name">
+                    <input type="text" name="detailValue" placeholder="Value">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Detail 3:
+                    <input type="text" name="detailName" placeholder="Name">
+                    <input type="text" name="detailValue" placeholder="Value">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <style type="text/css">
+        a {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <div>
+        <h1>Product Manager</h1>
+        <a href="/new">Create new product</a>
+        <br>
+        <a href="/categories">Show categories</a>
+        <br>
+        <a href="/shopping-cart">Your Cart</a>
+    </div>
+    <div>
+        <form th:action="@{/page/1}">
+            <input type="hidden" name="sortField" th:value="${sortField}">
+            <input type="hidden" name="sortDir" th:value="${sortDir}">
+            Filter: <input type="text" name="keyword" th:value="${keyword}" required/>
+            &nbsp;
+            <button type="submit">Search</button>
+            &nbsp;
+            <button type="submit" id="btnClear" onclick="clearSearch()">Clear</button>
+        </form>
+        <br>
+        <br>
+        <div>
+            <table border="1" cellpadding="10">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>
+                        <a th:href="@{'/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir}}">Product
+                            ID</a>
+                    </th>
+                    <th>
+                        <a th:href="@{'/page/' + ${currentPage} + '?sortField=name&sortDir=' + ${reverseSortDir}}">Name</a>
+                    </th>
+                    <th>
+                        <a th:href="@{'/page/' + ${currentPage} + '?sortField=brand&sortDir=' + ${reverseSortDir}}">Brand</a>
+                    </th>
+                    <th>
+                        <a th:href="@{'/page/' + ${currentPage} + '?sortField=madeIn&sortDir=' + ${reverseSortDir}}">Made
+                            In</a>
+                    </th>
+                    <th>
+                        <a th:href="@{'/page/' + ${currentPage} + '?sortField=price&sortDir=' + ${reverseSortDir}}">Price</a>
+                    </th>
+                    <th>Image</th>
+                    <th colspan="3" align="center">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product,status: ${productList}">
+                    <td th:text="${status.index+1}"></td>
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.brand}"></td>
+                    <td th:text="${product.madeIn}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td>
+                        <img th:src="${product.url}" alt="img" height="100px" width="100px">
+                    </td>
+                    <td>
+                        <a th:href="@{'/edit/'+${product.id}}">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/delete/'+${product.id}}">Delete</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/view/'+${product.id}}">View</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <div>
+            Total Items: <span th:text="${totalItems}"></span> - Page: <span th:text="${currentPage}"></span> of <span
+                th:text="${totalPages}"></span> -
+            &nbsp;
+            <a th:if="${currentPage>1}" th:href="@{'/page/1'+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}
+}">First</a>
+            <span th:unless="${currentPage>1}">First</span>
+            &nbsp;
+            <a th:if="${currentPage > 1}"
+               th:href="@{'/page/' + ${currentPage - 1}+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a>
+            <span th:unless="${currentPage > 1}">Previous</span>
+            <span th:each="i: ${#numbers.sequence(1, totalPages)}">
+            <a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}
++${keyword !=null ?'&keyword='+keyword:''}}">[[${i}]]</a>
+            <span th:unless="${currentPage != i}">[[${i}]]
+        </span>
+        &nbsp;
+        </span>
+            &nbsp;&nbsp;
+            </span>
+            <a style="color: blue" th:if="${currentPage < totalPages}"
+               th:href="@{'/page/' + ${currentPage + 1}+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+            <span th:unless="${currentPage < totalPages}">Next</span>
+            <a th:if="${currentPage < totalPages}"
+               th:href="@{'/page/' + ${totalPages} +'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+            <span th:unless="${currentPage < totalPages}">Last</span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/}]]";
+    }
+</script>
+</body>
+</html>

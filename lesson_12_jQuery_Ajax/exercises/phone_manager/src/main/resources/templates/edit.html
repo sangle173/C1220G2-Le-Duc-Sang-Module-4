@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Edit Phone</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <h1>Edit Phone</h1>
+    <div>
+        <div id="phoneFromResponse"></div>
+    </div>
+    <form id="editSmartphoneForm" th:object="${phoneExist}">
+        <table>
+            <tbody>
+            <tr>
+                <td>Producer:</td>
+                <td>
+                    <input id="producer" th:field="*{producer}" th:value="${phoneExist.producer}">
+                </td>
+            </tr>
+            <tr>
+                <td>Model:</td>
+                <td><input th:field="*{model}" th:value="${phoneExist.model}"/></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input th:field="*{price}" th:value="${phoneExist.price}"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Edit"/></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <a th:href="@{/phones/list}">List</a>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#editSmartphoneForm').submit(function (event) {
+            var producer = $('#producer').val();
+            var model = $('#model').val();
+            var price = $('#price').val();
+            var json = {"producer": producer, "model": model, "price": price};
+            $.ajax({
+                url: $("#editSmartphoneForm").attr("action"),
+                data: JSON.stringify(json),
+                type: "POST",
+
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
+                success: function (smartphone) {
+                    var respContent = "";
+
+                    respContent += "<span class='success'>Successfully [";
+                    respContent+="producer: ";
+                    respContent += smartphone.producer + " : ";
+                    respContent+="model: ";
+                    respContent += smartphone.model + " : ";
+                    respContent+="brand: ";
+                    respContent += smartphone.price + "]</span>";
+                    $("#phoneFromResponse").html(respContent);
+                }
+            });
+            event.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,10 +1,10 @@
-package com.example.producr_management_exercises;
+package com.example.product_management_exercises;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProducrManagementSecurityApplicationTests {
+class ProductManagementSecurityApplicationTests {
 
     @Test
     void contextLoads() {

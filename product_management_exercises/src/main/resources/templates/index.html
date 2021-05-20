@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Product Page</title>
@@ -11,13 +12,21 @@
 </head>
 <body>
 <div align="center">
+    <div sec:authorize="isAuthenticated()">
+        Welcome: <b><span sec:authentication="name">Username</span></b>
+        &nbsp;
+        <span sec:authentication="principal.authorities">Roles</span>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="logout"/>
+        </form>
+    </div>
     <div>
         <h1>Product Manager</h1>
         <a href="/new">Create new product</a>
         <br>
         <a href="/categories">Show categories</a>
         <br>
-        <br>
+        <a href="/shopping-cart">Your Cart</a>
     </div>
     <div>
         <form th:action="@{/page/1}">
@@ -26,7 +35,7 @@
             Filter: <input type="text" name="keyword" th:value="${keyword}" required/>
             &nbsp;
             <button type="submit">Search</button>
-            &nbsp;
+            &nbsp
             <button type="submit" id="btnClear" onclick="clearSearch()">Clear</button>
         </form>
         <br>
@@ -54,7 +63,8 @@
                         <a th:href="@{'/page/' + ${currentPage} + '?sortField=price&sortDir=' + ${reverseSortDir}}">Price</a>
                     </th>
                     <th>Image</th>
-                    <th colspan="3" align="center">Action</th>
+                    <th align="center" sec:authorize="hasAnyAuthority('ADMIN','EDITOR')">Action</th>
+                    <th align="center" sec:authorize="hasAnyAuthority('ADMIN','EDITOR','USER')">View</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,10 +78,10 @@
                     <td>
                         <img th:src="${product.url}" alt="img" height="100px" width="100px">
                     </td>
-                    <td>
+                    <td sec:authorize="hasAnyAuthority('ADMIN','EDITOR')">
                         <a th:href="@{'/edit/'+${product.id}}">Edit</a>
                     </td>
-                    <td>
+                    <td sec:authorize="hasAnyAuthority('ADMIN')">
                         <a th:href="@{'/delete/'+${product.id}}">Delete</a>
                     </td>
                     <td>

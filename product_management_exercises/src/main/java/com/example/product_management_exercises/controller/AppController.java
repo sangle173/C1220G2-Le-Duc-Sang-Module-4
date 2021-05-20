@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @SessionAttributes("cart")
@@ -117,5 +118,23 @@ public class AppController {
         Product product = productService.findById(id);
         model.addAttribute("product", product);
         return "view";
+    }
+
+    @GetMapping("/add-to-cart/{id}")
+    public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action){
+        Product product=productService.findById(id);
+        if (product==null){
+            return "/error.404";
+        }
+        if (action.equals("show")){
+            cart.addProduct(product);
+            return "redirect:/shopping-cart";
+        }
+        cart.addProduct(product);
+        return "redirect:/";
+    }
+    @GetMapping("/403")
+    public String error403(){
+        return "403";
     }
 }

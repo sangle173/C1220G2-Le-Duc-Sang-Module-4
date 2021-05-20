@@ -6,10 +6,10 @@
 </head>
 <body>
 <p>
-    <a href="/shop">Shop</a>
+    <a href="/">Back to product list</a>
 </p>
 <h1>Your Cart</h1>
-<form th:action="@{/shop}" th:object="${cart}" method="post">
+<form th:action="@{/}" th:object="${cart}" method="post">
     <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
     <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
     <table border="1">
@@ -23,7 +23,7 @@
             <td>
                 <a id="decrease_button" th:text="${'-'}"></a>
                 <span th:text="${product.getValue()}"></span>
-                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
+                <a id="increase_button" th:href="@{/add-to-cart/__${product.getKey().id}__(action='show')}"
                    th:text="${'+'}"></a>
             </td>
             <td th:text="${product.getKey().price}"></td>

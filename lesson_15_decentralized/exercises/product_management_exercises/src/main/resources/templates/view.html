@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <style type="text/css">
+        a {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>Product Detail</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Madein</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th colspan="3">Detail</th>
+            <th colspan="3" sec:authorize="hasAnyAuthority('ADMIN','EDITOR')">
+                action
+            </th>
+            <th>
+                Add to cart
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.brand}"></td>
+            <td th:text="${product.madeIn}"></td>
+            <td th:text="${product.price}"></td>
+            <td>
+                <img th:src="${product.url}" alt="img" height="100px" width="100px">
+            </td>
+            <td th:each="detail: ${product.details}">
+                <span th:text="${detail.name}+': '"></span>
+                <span th:text="${detail.value}"></span>
+            </td>
+            <td sec:authorize="hasAnyAuthority('ADMIN','EDITOR')">
+                <a th:href="@{'/edit/'+${product.id}}">Edit</a>
+            </td>
+            <td sec:authorize="hasAnyAuthority('ADMIN')">
+                <a th:href="@{'/delete/'+${product.id}}">Delete</a>
+            </td>
+            <td><a th:href="@{/add-to-cart/__${product.id}__(action='list')}">Add To Cart</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

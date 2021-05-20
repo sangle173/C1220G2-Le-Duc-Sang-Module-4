@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{dashboard.title}"></title>
+</head>
+<body>
+<h1 th:text="#{dashboard.heading}"></h1>
+<span th:text="#{dashboard.greeting}"></span>
+<table border="1">
+    <tr th:each=" userExist: ${users}">
+        <td th:text="${userExist.userName}"></td>
+        <td th:text="${userExist.password}"></td>
+    </tr>
+</table>
+<a th:href="@{/}">index</a>
+</body>
+</html>

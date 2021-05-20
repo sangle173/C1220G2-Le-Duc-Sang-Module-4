@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{dashboard.title}"></title>
+</head>
+<body>
+<h1 th:text="#{dashboard.heading}"></h1>
+<span th:text="#{dashboard.language}"></span>: <a href="?lang=en">English</a> | <a href="?lang=haw">Hawaii</a> <br>
+<span th:text="#{dashboard.greeting}"></span>
+<table border="1">
+    <tr th:each=" blog: ${blogs}">
+        <td th:text="${blog.topic}"></td>
+        <td th:text="${blog.content}"></td>
+    </tr>
+</table>
+<a th:href="@{/}" th:text="#{dashboard.index}"></a>
+</body>
+</html>

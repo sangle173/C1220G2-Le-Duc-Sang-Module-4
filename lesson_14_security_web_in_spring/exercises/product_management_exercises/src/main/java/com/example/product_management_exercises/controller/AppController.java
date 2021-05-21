@@ -8,10 +8,15 @@ import com.example.product_management_exercises.service.imple.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.extras.springsecurity5.auth.Authorization;
+import sun.plugin.liveconnect.SecurityContextHelper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -37,6 +42,14 @@ public class AppController {
         return viewPage(model, 1, "name", "asc", keyword);
     }
 
+    @GetMapping("/login")
+    public String showLoginPage(){
+        Authentication authorization= SecurityContextHolder.getContext().getAuthentication();
+        if (authorization==null|| authorization instanceof AnonymousAuthenticationToken){
+            return "login";
+        }
+        return "redirect:/";
+    }
     @GetMapping("/category/new")
     public String showCreateCategoryForm(Model model) {
         model.addAttribute("category", new Category());

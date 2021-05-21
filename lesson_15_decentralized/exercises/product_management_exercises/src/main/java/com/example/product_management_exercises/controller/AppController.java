@@ -8,6 +8,9 @@ import com.example.product_management_exercises.service.imple.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +38,15 @@ public class AppController {
     public String viewHomePage(Model model) {
         String keyword = null;
         return viewPage(model, 1, "name", "asc", keyword);
+    }
+
+    @GetMapping("/login")
+    public String showLoginPage() {
+        Authentication authorization = SecurityContextHolder.getContext().getAuthentication();
+        if (authorization == null || authorization instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+        return "redirect:/";
     }
 
     @GetMapping("/category/new")
@@ -121,20 +133,21 @@ public class AppController {
     }
 
     @GetMapping("/add-to-cart/{id}")
-    public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action){
-        Product product=productService.findById(id);
-        if (product==null){
+    public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
+        Product product = productService.findById(id);
+        if (product == null) {
             return "/error.404";
         }
-        if (action.equals("show")){
+        if (action.equals("show")) {
             cart.addProduct(product);
             return "redirect:/shopping-cart";
         }
         cart.addProduct(product);
         return "redirect:/";
     }
+
     @GetMapping("/403")
-    public String error403(){
+    public String error403() {
         return "403";
     }
 }

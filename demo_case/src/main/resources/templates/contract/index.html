@@ -175,9 +175,6 @@
                         <td th:text="${contract.customer.name}"></td>
                         <td th:text="${contract.serviceHotel.name}"></td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                                                                             data-toggle="tooltip"
-                                                                                             title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons"
                                                                                                  data-toggle="tooltip"
                                                                                                  title="Delete">&#xE872;</i></a>
@@ -253,7 +250,8 @@
 
                         <div class="form-group">
                             <label for="serviceHotel">Service Hotel:</label>
-                            <select name="serviceHotel" id="serviceHotel" class="form-control" th:field="*{serviceHotel}">
+                            <select name="serviceHotel" id="serviceHotel" class="form-control"
+                                    th:field="*{serviceHotel}">
                                 <option th:each="servic: ${serviceHotel}" th:value="${servic.id}"
                                         th:text="${servic.name}"></option>
                             </select>

@@ -5,10 +5,8 @@ import com.example.demo_case.service.customer.CustomerService;
 import com.example.demo_case.service.customer.TypeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/customers")
@@ -36,4 +34,12 @@ public class CustomerController {
 
         return "redirect:/customers";
     }
+
+
+    @GetMapping(value = "/delete/{id}")
+    public String view(@PathVariable("id") Integer id) {
+        customerService.deleteById(id);
+        return "redirect:/customers";
+    }
+
 }

@@ -1,7 +1,10 @@
-package com.example.product_management_exercises.model;
+package com.example.case_study.model;
+
+import com.example.case_study.model.employee.Employee;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,6 +18,8 @@ public class User {
     private String username;
     private String password;
     private boolean enabled;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Employee.class)
+    private List<Employee> employee;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -25,6 +30,14 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     public User() {
+    }
+
+    public User(String username, String password, boolean enabled, List<Employee> employee, Set<Role> roles) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.employee = employee;
+        this.roles = roles;
     }
 
     public Integer getId() {

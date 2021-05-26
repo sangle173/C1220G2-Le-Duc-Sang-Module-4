@@ -1,4 +1,7 @@
 package com.example.case_study.service.employee;
 
-public class PositionService {
+import com.example.case_study.model.employee.Position;
+import com.example.case_study.service.IGeneralService;
+
+public interface PositionService extends IGeneralService<Position> {
 }

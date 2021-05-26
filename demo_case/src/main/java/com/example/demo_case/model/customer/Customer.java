@@ -1,6 +1,8 @@
 package com.example.demo_case.model.customer;
 
 import com.example.demo_case.model.contract.Contract;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import java.util.List;

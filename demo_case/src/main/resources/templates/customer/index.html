@@ -137,6 +137,14 @@
                                 <span>Delete</span></a>
                         </div>
                     </div>
+                    <div class="row">
+                        <form th:action="@{/customers/search}">
+                            Name: <input type="text" name="nameSearch" th:value="${nameSearch}" />
+                            Email: <input type="text" name="emailSearch" th:value="${emailSearch}" />
+                            &nbsp;
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
@@ -178,7 +186,8 @@
                         <td th:text="${customer.type.typeName}"></td>
                         <td>
                             <a type="button" class="btn btn-outline-light text-dark delete" data-toggle="modal"
-                                    th:attr="data-target='#recordDeleteModal'+${customer.id}"><i class="large material-icons">delete</i>
+                               th:attr="data-target='#recordDeleteModal'+${customer.id}"><i
+                                    class="large material-icons text-danger">delete</i>
                             </a>
                             <!-- Modal -->
                             <div class="modal fade" th:attr="id='recordDeleteModal'+${customer.id}" tabindex="-1"
@@ -201,14 +210,15 @@
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel
                                             </button>
                                             <a class="btn btn-primary"
-                                                    th:attr="href='/customers/delete/'+${customer.id}">Delete
+                                               th:attr="href='/customers/delete/'+${customer.id}">Delete
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Modal end -->
-                            <a th:href="@{'/employees/view/'+${customer.id}}" type="button" class="btn btn-outline-light text-dark delete">
+                            <a th:href="@{'/employees/view/'+${customer.id}}" type="button"
+                               class="btn btn-outline-light text-dark delete">
                                 <i class="large material-icons">visibility</i>
                             </a>
                         </td>
@@ -216,18 +226,42 @@
                     </tbody>
                 </table>
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <div class="hint-text">Showing <b><span>5</span></b> out of <b><span th:text="${totalItems}"></span></b>
+                        entries
+                    </div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        <li class="page-item">
+                            <span th:text="${'Total Pgae- '+totalPages}"></span> -&nbsp;
+                            <a th:if="${currentPage>1}" class="page-link" th:href="@{'/customers/page/1'+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}
+}">First</a>
+                            <span th:unless="${currentPage>1}">First</span>
+                        </li>
+                        <li class="page-item">
+                            <a th:if="${currentPage > 1}"
+                               th:href="@{'/customers/page/' + ${currentPage - 1}+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a>
+                            <span th:unless="${currentPage > 1}">Previous</span>
+                        </li>
+                        <li class="page-item">
+                             <span th:each="i: ${#numbers.sequence(1, totalPages)}">
+            <a th:if="${currentPage != i}" th:href="@{'/customers/page/' + ${i}+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}
++${keyword !=null ?'&keyword='+keyword:''}}">[[${i}]]</a>
+            <span th:unless="${currentPage != i}">[[${i}]]
+        </span>
+        &nbsp;
+        </span>&nbsp;&nbsp;
+                        </li>
+                        <li class="page-item">
+                            <a style="color: blue" th:if="${currentPage < totalPages}"
+                               th:href="@{'/customers/page/' + ${currentPage + 1}+'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+                            <span th:unless="${currentPage < totalPages}">Next</span>
+                        </li>
+                        <li class="page-item">
+                            <a th:if="${currentPage < totalPages}"
+                               th:href="@{'/customers/page/' + ${totalPages} +'?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+                            <span th:unless="${currentPage < totalPages}">Last</span>
+                        </li>
                     </ul>
                 </div>
-                pageing here
             </div>
         </div>
     </div>

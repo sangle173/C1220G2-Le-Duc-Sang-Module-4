@@ -1,9 +1,11 @@
 package com.example.demo_case.model.employee;
 
 import com.example.demo_case.model.contract.Contract;
-import com.example.demo_case.model.customer.Customer;
+import com.example.demo_case.validator.ContactNumberConstraint;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.List;
 
 @Entity
@@ -13,12 +15,26 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
     private Integer id;
+    @NotBlank(message = "Name is mandatory")
+    @Size(min = 5, max = 20)
     private String name;
+    @NotEmpty(message = "Birthday is mandatory")
     private String birthday;
+    @NotEmpty
     private String idCard;
+
+    @NotNull
+    @NumberFormat(style = NumberFormat.Style.NUMBER)
+    @DecimalMin("1.00")
     private Double salary;
+
+    @ContactNumberConstraint
     private String phoneNumber;
+    @NotEmpty(message = "Email is mandatory")
+    @Email
     private String email;
+    @NotNull
+    @Size(min = 5,max = 200)
     private String address;
 
     @ManyToOne

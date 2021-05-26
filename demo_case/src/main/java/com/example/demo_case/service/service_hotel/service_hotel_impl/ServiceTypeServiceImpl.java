@@ -4,6 +4,10 @@ import com.example.demo_case.model.service_hotel.ServiceType;
 import com.example.demo_case.repositories.service_hotel.ServiceTypeRepository;
 import com.example.demo_case.service.service_hotel.ServiceTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +16,7 @@ import java.util.List;
 public class ServiceTypeServiceImpl implements ServiceTypeService {
     @Autowired
     private ServiceTypeRepository repository;
+
 
     @Override
     public List<ServiceType> findAll() {

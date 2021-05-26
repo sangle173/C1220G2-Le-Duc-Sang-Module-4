@@ -1,34 +1,35 @@
 package com.example.case_study.service.employee.impl;
 
-import com.example.case_study.model.employee.Position;
-import com.example.case_study.repositories.employee.PositionRepository;
-import com.example.case_study.service.employee.PositionService;
+import com.example.case_study.model.employee.Department;
+import com.example.case_study.repositories.employee.DepartmentRepository;
+import com.example.case_study.service.employee.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PositionServiceImpl implements PositionService {
+public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
-    private PositionRepository positionRepository;
+    private DepartmentRepository repository;
+
     @Override
-    public List<Position> findAll() {
-        return positionRepository.findAll();
+    public List<Department> findAll() {
+        return repository.findAll();
     }
 
     @Override
-    public Position findById(Integer id) {
-        return positionRepository.findById(id).orElse(null);
+    public Department findById(Integer id) {
+        return repository.findById(id).orElse(null);
     }
 
     @Override
-    public Position save(Position position) {
-        return positionRepository.save(position);
+    public Department save(Department department) {
+        return repository.save(department);
     }
 
     @Override
     public void deleteById(Integer id) {
-        positionRepository.deleteById(id);
+        repository.deleteById(id);
     }
 }

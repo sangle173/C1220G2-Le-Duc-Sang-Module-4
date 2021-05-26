@@ -1,5 +1,6 @@
 package com.example.demo_case.service.employee.impl;
 
+
 import com.example.demo_case.model.employee.Department;
 import com.example.demo_case.repositories.employee.DepartmentRepository;
 import com.example.demo_case.service.employee.DepartmentService;
@@ -12,6 +13,7 @@ import java.util.List;
 public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     private DepartmentRepository repository;
+
 
     @Override
     public List<Department> findAll() {

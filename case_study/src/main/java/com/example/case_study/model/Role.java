@@ -1,4 +1,4 @@
-package com.example.product_management_exercises.model;
+package com.example.case_study.model;
 
 import javax.persistence.*;
 

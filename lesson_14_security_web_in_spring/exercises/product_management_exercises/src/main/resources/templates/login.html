@@ -107,7 +107,11 @@
 <body>
 <div class="login-form">
     <h2 class="text-center">Member Login</h2>
+
     <form th:action="@{/login}" method="post">
+        <th:block th:if="${param.error}">
+            <small class="text-danger">Invalid username or password</small>
+        </th:block>
         <div class="form-group">
             <input type="text" class="form-control input-lg" name="username" placeholder="Username" required="required">
         </div>

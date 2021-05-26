@@ -1,7 +1,7 @@
 package com.example.case_study.service.employee;
 
-import com.example.case_study.model.employee.Position;
+import com.example.case_study.model.employee.Employee;
 import com.example.case_study.service.IGeneralService;
 
-public interface DepartmentService extends IGeneralService<Position> {
+public interface EmployeeService extends IGeneralService<Employee> {
 }

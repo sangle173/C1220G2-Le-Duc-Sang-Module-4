@@ -128,14 +128,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="knife: ${knives}">
+                    <tr th:each="knife: ${employees}">
                         <td>
                                     <span class="custom-checkbox">
                                         <input type="checkbox" id="checkbox1" name="options[]" value="1">
                                         <label for="checkbox1"></label>
                                     </span>
                         </td>
-                        <td th:text="${knife.id}"></td>
+                        <td th:text="${knife.}"></td>
                         <td th:text="${knife.name}" class="h5"></td>
                         <td>
                             <img th:src="${knife.url}" alt="img" class="img-thumbnail" height="125px" width="125px">

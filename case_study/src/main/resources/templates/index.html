@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css"/>
     <style>
         img {
             width: 200px;
@@ -164,21 +164,21 @@
                     </tr>
                     </thead>
                     <tbody>
-<!--                    <tr th:each="em: ${emList}" >-->
+                    <tr th:each="em: ${}" >
                         <td>
                                     <span class="custom-checkbox">
                                         <input type="checkbox" id="checkbox1" name="options[]" value="1">
                                         <label for="checkbox1"></label>
                                     </span>
                         </td>
-<!--                        <td th:text="${em.id}"></td>-->
-<!--                        <td th:text="${em.name}"></td>-->
-<!--                        <td th:text="${em.birthday}"></td>-->
-<!--                        <td th:text="${em.idCard}"></td>-->
-<!--                        <td th:text="${em.salary}"></td>-->
-<!--                        <td th:text="${em.phoneNumber}"></td>-->
-<!--                        <td th:text="${em.address}"></td>-->
-<!--                        <td th:text="${em.department}"></td>-->
+                        <td th:text="${em.id}"></td>
+                        <td th:text="${em.name}"></td>
+                        <td th:text="${em.birthday}"></td>
+                        <td th:text="${em.idCard}"></td>
+                        <td th:text="${em.salary}"></td>
+                        <td th:text="${em.phoneNumber}"></td>
+                        <td th:text="${em.address}"></td>
+                        <td th:text="${em.department}"></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
                                                                                              data-toggle="tooltip"

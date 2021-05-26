@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class ProductService implements IProductService<Product> {
@@ -28,6 +30,12 @@ public class ProductService implements IProductService<Product> {
         return productRepository.findAll(pageable);
     }
 
+    public List<Product> findByNameCategoryBrand(String name, String categoryName, String brand) {
+        if (name==null&&categoryName==null&&brand==null){
+            return productRepository.findAll();
+        }
+        return productRepository.findByNameContainingAndCategory_NameContainingAndBrandContaining(name, categoryName, brand);
+    }
 
     @Override
     public void save(Product product) {

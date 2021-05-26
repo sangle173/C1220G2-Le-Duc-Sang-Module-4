@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>product list</h1>
+<a th:href="@{/search}">product list</a>
+<form th:action="@{/search}">
+    <label for="nameSearch">Name</label>
+    <input type="text" name="nameSearch" id="nameSearch" th:value="${nameSearch}"/>
+    <label for="categoryName">Category</label>
+    <input type="text" name="categoryName" id="categoryName" th:value="${categoryName}"/>
+    <label for="brandSearch">Brand</label>
+    <input type="text" name="brandSearch" id="brandSearch" th:value="${brandSearch}"/>
+    <button type="submit">Search</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Madein</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tr th:each="product,status: ${products}">
+        <td th:text="${status.index+1}"></td>
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.brand}"></td>
+        <td th:text="${product.madeIn}"></td>
+        <td th:text="${product.price}"></td>
+        <td>
+            <img th:src="${product.url}" alt="img" height="100px" width="100px">
+        </td>
+        <td>
+            <a th:href="@{'/edit/'+${product.id}}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{'/delete/'+${product.id}}">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{'/view/'+${product.id}}">View</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

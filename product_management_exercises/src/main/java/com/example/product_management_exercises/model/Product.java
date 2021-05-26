@@ -28,6 +28,8 @@ public class Product {
     public Product() {
     }
 
+
+
     public Product(String name, String brand, String madeIn, float price, String url, Category category, List<ProductDetail> details) {
         this.name = name;
         this.brand = brand;
@@ -104,7 +106,7 @@ public class Product {
         this.details = details;
     }
 
-    public void addDetails(String name, String value){
-        this.details.add(new ProductDetail(name,value,this));
+    public void addDetails(String name, String value) {
+        this.details.add(new ProductDetail(name, value, this));
     }
 }
